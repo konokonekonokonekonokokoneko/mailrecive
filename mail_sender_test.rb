@@ -19,7 +19,7 @@ page_height = 2000
 driver.manage.window.resize_to(page_width, page_height)
 
 # ログイン先のURL
-START_URL = 'https://mail.google.com/mail/u/0/#label/kaggle'
+START_URL = 'https://mail.google.com/'
 driver.navigate.to START_URL
 # ちょっと確認のためです
 driver.save_screenshot './inbox.png'
@@ -47,4 +47,8 @@ wait.until {driver.find_element(:id, 'loginFormButton').displayed?}
 driver.find_element(:id, 'loginFormButton').click
 driver.save_screenshot './click_second_time.png'
 # これで認証できたはず
+#p driver.page_source
+# 改めて簡易モードに入るのはどうでしょう
+driver.navigate.to 'https://mail.google.com/mail/?ui=html'
+driver.save_screenshot './click_third_time.png'
 p driver.page_source
