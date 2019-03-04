@@ -2,6 +2,10 @@ require 'dotenv'
 require 'selenium-webdriver'
 require 'chromedriver-helper'
 # とりあえず.envは読み込んどく
+# 内容は以下の通り
+# MAIL_ADDRESS=''
+# ACCOUNT_ID=''
+# PASSWORD=''
 Dotenv.load
 # webdriverの条件
 options = Selenium::WebDriver::Chrome::Options.new
